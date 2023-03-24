@@ -1,5 +1,17 @@
-*.pyc
 .DS_Store
-*egg-info/
 .ipynb_checkpoints
-dist/
+# Runtime-generated files
+# *.pyc
+__pycache__
+# Test-specific files
+.pytest_cache/
+.coverage
+test-reports/
+# Build-specific files
+/build/
+/dist/
+*.egg-info/
+# Python Virtual Environments
+env/
+# IDE-specific files
+.vscode/
