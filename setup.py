@@ -8,18 +8,19 @@ with open(os.path.join(here, 'highcharts', 'version.py')) as f:
    exec(f.read(), {}, ns)
 
 setup(
-    name='python-highcharts',
+    name='python-highcharts-excentis',
     version=ns['__version__'],
     author='Kyper Developers',
     author_email='developers@kyperdata.com',
+    maintainer='Excentis Software',
+    maintainer_email='support@excentis.com',
     packages=find_packages(),
     package_data={
         'highcharts.highcharts': ['templates/*.html'],
         'highcharts.highmaps': ['templates/*.html'],
         'highcharts.highstock': ['templates/*.html']
     },
-    url='https://github.com/kyper-data/python-highcharts',
-    download_url='https://github.com/kyper-data/python-highcharts/tarball/' + ns['__version__'],
+    url='https://github.com/excentis/python-highcharts',
     description='Python Highcharts wrapper',
     install_requires=[
         "Jinja2",
