@@ -7,6 +7,9 @@ ns = {}
 with open(os.path.join(here, 'highcharts', 'version.py')) as f:
    exec(f.read(), {}, ns)
 
+with open('README.md', encoding='utf-8') as readme_fh:
+    _LONG_DESCRIPTION=readme_fh.read()
+
 setup(
     name='python-highcharts-excentis',
     version=ns['__version__'],
@@ -22,6 +25,8 @@ setup(
     },
     url='https://github.com/excentis/python-highcharts',
     description='Python Highcharts wrapper',
+    long_description=_LONG_DESCRIPTION,
+    long_description_content_type='text/markdown',
     install_requires=[
         "Jinja2",
         "future"
