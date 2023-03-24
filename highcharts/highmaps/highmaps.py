@@ -13,7 +13,6 @@ import json, uuid
 import re
 import datetime
 import html
-from collections import Iterable
 from .options import BaseOptions, ChartOptions, \
     ColorsOptions, ColorAxisOptions, CreditsOptions, DrilldownOptions, ExportingOptions, \
     GlobalOptions, LabelsOptions, LangOptions, \

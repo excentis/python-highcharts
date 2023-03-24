@@ -12,7 +12,6 @@ import re
 import datetime
 import urllib.request, urllib.error, urllib.parse
 import html
-from collections import Iterable
 from .options import BaseOptions, ChartOptions, ColorAxisOptions, \
     ColorsOptions, CreditsOptions, DrilldownOptions, ExportingOptions, \
     GlobalOptions, LabelsOptions, LangOptions, \
