@@ -1,4 +1,14 @@
-# python-highcharts [![CircleCI](https://circleci.com/gh/kyper-data/python-highcharts.svg?style=svg)](https://circleci.com/gh/kyper-data/python-highcharts)
+# highcharts-excentis
+
+> This version is a fork of the original project by
+> [Kyper Data](https://github.com/kyper-data/python-highcharts/).
+>
+> Unfortunately, the original maintainers no longer respond to issues,
+> pull requests, e-mails or any other attempts to contact them.
+>
+> Therefor, we decided to fork their project and made some fixes for
+> Python >= 3.10. A published version is also available at
+> [PyPI](https://pypi.org/project/highcharts-excentis/)
 
 ## License
 
@@ -16,9 +26,10 @@ The original framework was inspired by [python-nvd3](https://github.com/areski/p
 
 ## Installation
 
-python-highcharts supports Python 2.7/3.4+ and is available on PyPI. To install:
+python-highcharts supports Python 2.7/3.4+ and is available on
+[PyPI](https://pypi.org/project/highcharts-excentis/). To install:
 ```
-pip install python-highcharts
+pip install highcharts-excentis
 ```
 
 ---------------------------------------------------------------------------------------------------------------
@@ -33,7 +44,7 @@ The main input is a python dictionary similar to Highcharts's 'options' object. 
 However, the data_set(s) need to be input by a separate function.
 
 ```python
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 
 # A chart is the container that your data will be rendered in, it can (obviously) support multiple data series within it.
 chart = Highchart()
@@ -128,7 +139,7 @@ chart.add_drilldown_data_set(data_2, 'column', 'Chrome', name='Chrome')
 ## Example Usage
 
 ```python
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 chart = Highchart()
 
 chart.set_options('chart', {'inverted': True})
@@ -221,7 +232,7 @@ The main input is a python dictionary similar to Highmaps's 'options' object. Th
 However, the data_set(s) need to be input by a separate function.
 
 ```python
-from highcharts import Highmap
+from highcharts_excentis import Highmap
 
 # A chart is the container that your data will be rendered in, it can (obviously) support multiple data series within it.
 chart = Highmap()
@@ -397,7 +408,7 @@ chart.add_JSscript("var lines = Highcharts.geojson(Highcharts.maps['countries/us
 Bad practice: 
 1) load data directly and handle it in Javascript 2) insert javascript into thea head 3) use unquote function RawJavaScriptText to prepare Javascript:
 ```python
-from highcharts import Highmap
+from highcharts_excentis import Highmap
 from common import RawJavaScriptText
 
 chart = Highmap()
@@ -485,7 +496,7 @@ chart.save_file()
 Better practice: 
 ```python
 
-from highcharts import Highmap
+from highcharts_excentis import Highmap
 from highmap_helper import jsonp_loader, js_map_loader, geojson_handler
 
 chart = Highmap()
