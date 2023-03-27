@@ -1,0 +1,62 @@
+[build-system]
+requires = ['setuptools >=62']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "highcharts-excentis"
+
+description = "Python Highcharts wrapper"
+dynamic = ['version']
+
+# Build tool / pip should detect content-type automatically:
+readme = "README.md"
+authors = [{ name = 'Kyper Developers', email = 'developers@kyperdata.com' }]
+maintainers = [
+    { name = 'Excentis Development Team', email = 'support@excentis.com' },
+    { name = "Tom Ghyselinck", email = "tom.ghyselinck@excentis.com" },
+]
+requires-python = ">=3.4"
+dependencies = [
+    'future',
+    'Jinja2', # for templates
+]
+keywords = [
+    'python',
+    'ipython',
+    'highcharts',
+    'chart',
+    'visualization',
+    'graph',
+    'javascript',
+    'html',
+]
+classifiers = [
+    # See also https://pypi.org/classifiers/
+    'Framework :: IPython',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Financial and Insurance Industry',
+    'Intended Audience :: Science/Research',
+    #
+    # ! XXX - Also keep ``project.license`` in sync!
+    #
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+]
+
+[project.license]
+#
+# ! XXX - Also keep ``project.classifiers`` ('License :: OSI Approved :: ') in sync!
+#
+file = "LICENSE"
+
+[project.urls]
+Homepage = "https://github.com/excentis/python-highcharts"
+
+[tool.setuptools.package-data]
+"highcharts_excentis.highcharts" = ["templates/*.html"]
+"highcharts_excentis.highmaps" = ["templates/*.html"]
+"highcharts_excentis.highstock" = ["templates/*.html"]
+
+[tool.setuptools.dynamic]
+version = { attr = "highcharts_excentis.version.__version__" }
