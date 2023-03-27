@@ -4,7 +4,7 @@ Highcharts Demos
 Donut chart: http://www.highcharts.com/demo/pie-donut
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width = 850, height = 400)
 
 data = [{

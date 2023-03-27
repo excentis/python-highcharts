@@ -3,8 +3,8 @@
 Highmaps Demos
 Detailed map, US counties: http://www.highcharts.com/maps/demo/us-counties
 """
-from highcharts import Highmap
-from highcharts.highmaps.common import RawJavaScriptText
+from highcharts_excentis import Highmap
+from highcharts_excentis.highmaps.common import RawJavaScriptText
 
 H = Highmap()
 

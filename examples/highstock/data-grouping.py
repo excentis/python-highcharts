@@ -4,8 +4,8 @@ Highstock Demos
 52,000 points with data grouping: http://www.highcharts.com/stock/demo/data-grouping
 """
 
-from highcharts import Highstock
-from highcharts.highstock.highstock_helper import jsonp_loader
+from highcharts_excentis import Highstock
+from highcharts_excentis.highstock.highstock_helper import jsonp_loader
 H = Highstock()
 
 data_url = 'http://www.highcharts.com/samples/data/jsonp.php?filename=large-dataset.json&callback=?'

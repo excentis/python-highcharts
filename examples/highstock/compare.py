@@ -4,8 +4,8 @@ Highstock Demos
 Compare multiple series: http://www.highcharts.com/stock/demo/compare
 """
 
-from highcharts import Highstock
-from highcharts.highstock.highstock_helper import jsonp_loader
+from highcharts_excentis import Highstock
+from highcharts_excentis.highstock.highstock_helper import jsonp_loader
 H = Highstock()
 
 names = ['MSFT', 'AAPL', 'GOOG']

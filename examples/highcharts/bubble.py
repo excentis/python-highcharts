@@ -3,7 +3,7 @@
 Highcharts Demos
 Bubble chart: http://www.highcharts.com/demo/bubble
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=850, height=400)
 
 options = {

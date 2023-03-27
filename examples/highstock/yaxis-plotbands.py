@@ -5,7 +5,7 @@ Plot bands on Y axis: http://www.highcharts.com/stock/demo/yaxis-plotbands
 """
 
 import datetime
-from highcharts import Highstock
+from highcharts_excentis import Highstock
 H = Highstock()
 
 data = [

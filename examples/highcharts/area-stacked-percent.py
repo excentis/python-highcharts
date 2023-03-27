@@ -3,7 +3,7 @@
 Highcharts Demos
 Percentage area: http://www.highcharts.com/demo/area-stacked-percent
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=750, height=600)
 
 data1 = [502, 635, 809, 947, 1402, 3634, 5268] # data for Asia

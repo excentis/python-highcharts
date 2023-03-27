@@ -4,7 +4,7 @@ Highcharts Demos
 Time data with irregular intervals: http://www.highcharts.com/demo/spline-irregular-time
 """
 from datetime import datetime
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart()
 
 winter_12_13_data = [

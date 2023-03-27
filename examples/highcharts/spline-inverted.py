@@ -3,7 +3,7 @@
 Highcharts Demos
 Spline with inverted axes: http://www.highcharts.com/demo/spline-inverted
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart()
 
 # set option 

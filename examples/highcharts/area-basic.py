@@ -3,7 +3,7 @@
 Highcharts Demos
 Basic area: http://www.highcharts.com/demo/area-basic
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=750, height=600) # the size of chart can be set here
 
 options = {

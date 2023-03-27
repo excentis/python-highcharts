@@ -4,7 +4,7 @@ Highcharts Demos
 Fixed placement columns: http://www.highcharts.com/demo/column-placement
 """
 import datetime
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 
 H = Highchart(width=850, height=400)
 

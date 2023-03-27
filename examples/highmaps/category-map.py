@@ -4,7 +4,7 @@ Highmaps Demos
 Categorized areas: http://www.highcharts.com/maps/demo/category-map
 """
 
-from highcharts import Highmap
+from highcharts_excentis import Highmap
 H = Highmap(width=650, height=500)
 
 options = {

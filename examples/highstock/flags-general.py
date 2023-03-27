@@ -5,7 +5,7 @@ Flags marking events: http://www.highcharts.com/stock/demo/flags-general
 """
 
 import datetime
-from highcharts import Highstock
+from highcharts_excentis import Highstock
 H = Highstock()
 
 data = [

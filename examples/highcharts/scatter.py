@@ -4,7 +4,7 @@ Highcharts Demos
 Scatter plot: http://www.highcharts.com/demo/scatter
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=850, height=400)
 
 options = {

@@ -8,7 +8,7 @@ Highchart options can be either set by "set_options" method as showing here or
 construct a option dictionary object and input using "set_dict_options" method
 """
 
-from highcharts import Highchart # import highchart library
+from highcharts_excentis import Highchart # import highchart library
 H = Highchart() # setup highchart instance
 
 data = list(range(1,20))

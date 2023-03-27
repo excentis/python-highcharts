@@ -4,7 +4,7 @@ Highcharts Demos
 3D scatter chart: http://www.highcharts.com/demo/3d-scatter-draggable
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=550, height=400)
 
 """

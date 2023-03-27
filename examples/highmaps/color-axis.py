@@ -4,7 +4,7 @@ Highmaps Demos
 Color axis and data labels: http://www.highcharts.com/maps/demo/color-axis
 """
 
-from highcharts import Highmap
+from highcharts_excentis import Highmap
 H = Highmap(width = 650, height = 550)
 
 options = {

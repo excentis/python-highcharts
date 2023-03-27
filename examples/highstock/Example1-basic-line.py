@@ -30,8 +30,8 @@ The following example is from Highstock Demos
 Single line series: http://www.highcharts.com/stock/demo/basic-line
 """
 
-from highcharts import Highstock
-from highcharts.highstock.highstock_helper import jsonp_loader
+from highcharts_excentis import Highstock
+from highcharts_excentis.highstock.highstock_helper import jsonp_loader
 H = Highstock()
 
 data_url = 'http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?'

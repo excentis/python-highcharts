@@ -4,7 +4,7 @@ Highcharts Demos
 Spline with symbols: http://www.highcharts.com/demo/spline-symbols
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart()
 
 

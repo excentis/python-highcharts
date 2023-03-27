@@ -4,8 +4,8 @@ Highmaps Demos
 Detailed map, US counties: http://www.highcharts.com/maps/demo/us-counties
 """
 
-from highcharts import Highmap
-from highcharts.highmaps.highmap_helper import jsonp_loader, js_map_loader, geojson_handler
+from highcharts_excentis import Highmap
+from highcharts_excentis.highmaps.highmap_helper import jsonp_loader, js_map_loader, geojson_handler
 
 H = Highmap()
 

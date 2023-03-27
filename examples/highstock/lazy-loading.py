@@ -11,7 +11,7 @@ by the navigation bar due to the large dataset.
 Due to the update, this chart requires JS function in the beginning and xAxis.events options.
 """
 
-from highcharts import Highstock
+from highcharts_excentis import Highstock
 H = Highstock()
 
 data_url = 'http://www.highcharts.com/samples/data/from-sql.php?callback=?'

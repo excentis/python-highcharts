@@ -3,8 +3,8 @@
 Highstock Demos
 Intraday area: http://www.highcharts.com/stock/demo/intraday-area
 """
-from highcharts import Highstock
-from highcharts.highstock.highstock_helper import jsonp_loader
+from highcharts_excentis import Highstock
+from highcharts_excentis.highstock.highstock_helper import jsonp_loader
 from datetime import datetime
 H = Highstock()
 

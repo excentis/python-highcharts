@@ -4,8 +4,8 @@ Highstock Demos
 OHLC: http://www.highcharts.com/stock/demo/ohlc
 """
 
-from highcharts import Highstock
-from highcharts.highstock.highstock_helper import jsonp_loader
+from highcharts_excentis import Highstock
+from highcharts_excentis.highstock.highstock_helper import jsonp_loader
 H = Highstock()
 
 data_url = 'http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-ohlc.json&callback=?'

@@ -3,7 +3,7 @@
 Highcharts Demos
 Heatmap: http://www.highcharts.com/demo/heatmap
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart()
 
 data = [

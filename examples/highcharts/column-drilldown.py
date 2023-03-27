@@ -4,7 +4,7 @@ Highcharts Demos
 Column with drilldown: http://www.highcharts.com/demo/column-drilldown
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=850, height=400)
 
 """

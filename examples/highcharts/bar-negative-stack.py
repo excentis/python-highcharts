@@ -4,7 +4,7 @@ Highcharts Demos
 Bar with negative stack: http://www.highcharts.com/demo/bar-negative-stack
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=550, height=400)
 
 categories = ['0-4', '5-9', '10-14', '15-19',

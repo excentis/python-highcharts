@@ -3,7 +3,7 @@
 Highcharts Demos
 Area range and line: http://www.highcharts.com/demo/arearange-line
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=750, height=600)
 
 ranges = [

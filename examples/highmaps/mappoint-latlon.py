@@ -4,8 +4,8 @@ Highmaps Demos
 Map point with lat/long: http://www.highcharts.com/maps/demo/mappoint-latlon
 """
 
-from highcharts import Highmap
-from highcharts.highmaps.highmap_helper import jsonp_loader, js_map_loader, geojson_handler
+from highcharts_excentis import Highmap
+from highcharts_excentis.highmaps.highmap_helper import jsonp_loader, js_map_loader, geojson_handler
 
 H = Highmap(height=750)
 map_url = 'http://code.highcharts.com/mapdata/countries/gb/gb-all.js'

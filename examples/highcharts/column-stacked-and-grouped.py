@@ -3,7 +3,7 @@
 Highcharts Demos
 Stacked and grouped column: http://www.highcharts.com/demo/column-stacked-and-grouped
 """
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 
 H = Highchart(width=750, height=600)
 

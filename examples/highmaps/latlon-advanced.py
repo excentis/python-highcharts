@@ -4,8 +4,8 @@ Highmaps Demos
 Advanced lat/long: http://www.highcharts.com/maps/demo/latlon-advanced
 """
 
-from highcharts import Highmap
-from highcharts.highmaps.highmap_helper import jsonp_loader, js_map_loader, geojson_handler, interpolateRGB
+from highcharts_excentis import Highmap
+from highcharts_excentis.highmaps.highmap_helper import jsonp_loader, js_map_loader, geojson_handler, interpolateRGB
 
 H = Highmap(height=550)
 map_url = 'http://code.highcharts.com/mapdata/countries/us/us-all.js'

@@ -19,8 +19,8 @@ and covert to python readable data.
 For function coverstion, such as Data.UTC to datetime.datetime, please check JSONPDecoder
 """
 
-from highcharts import Highstock
-from highcharts.highstock.highstock_helper import jsonp_loader
+from highcharts_excentis import Highstock
+from highcharts_excentis.highstock.highstock_helper import jsonp_loader
 H = Highstock()
 
 data_url = 'http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?'

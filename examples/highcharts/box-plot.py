@@ -4,7 +4,7 @@ Highcharts Demos
 Box plot: http://www.highcharts.com/demo/box-plot
 """
 
-from highcharts import Highchart
+from highcharts_excentis import Highchart
 H = Highchart(width=550, height=400)
 
 options = {
