@@ -349,13 +349,13 @@ class Highchart(object):
 
             self.header_css = [
                 '<style>' +
-                opener.open(source).read().decode('ASCII').replace('\n', '') +
+                opener.open(source).read().decode('utf-8').replace('\n', '') +
                 '</style>' for source in self.CSSsource
             ]
 
             self.header_js = [
                 '<script type="text/javascript">' +
-                opener.open(source).read().decode('ASCII').replace('\n', '') +
+                opener.open(source).read().decode('utf-8').replace('\n', '') +
                 '</script>' for source in self.JSsource
             ]
             
