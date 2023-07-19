@@ -75,7 +75,7 @@ class Highchart(object):
 
         # set CSS src
         self.CSSsource = [
-                'https://www.highcharts.com/highslide/highslide.css',
+                'https://code.highcharts.com/6/css/highcharts.css',
 
             ]
 
@@ -348,12 +348,17 @@ class Highchart(object):
             opener.addheaders = [('User-Agent', 'Mozilla/5.0')]
 
             self.header_css = [
-                '<style>%s</style>' % opener.open(h).read() for h in self.CSSsource
+                '<style>' +
+                opener.open(source).read().decode('utf-8').replace('\n', '') +
+                '</style>' for source in self.CSSsource
             ]
 
             self.header_js = [
-                '<script type="text/javascript">%s</script>' % opener.open(h).read() for h in self.JSsource
+                '<script type="text/javascript">' +
+                opener.open(source).read().decode('utf-8').replace('\n', '') +
+                '</script>' for source in self.JSsource
             ]
+            
         else:
             self.header_css = [
                 '<link href="%s" rel="stylesheet" />' % h for h in self.CSSsource
