@@ -206,7 +206,7 @@ class Highchart(object):
         kwargs.update({'name':name})
 
         if series_type == 'treemap':
-            self.add_JSsource('http://code.highcharts.com/modules/treemap.js')
+            self.add_JSsource('http://code.highcharts.com/6/modules/treemap.js')
 
         series_data = Series(data, series_type=series_type, **kwargs)
        
@@ -291,7 +291,7 @@ class Highchart(object):
 
         if option_type == 'chart' and 'options3d' in option_dict:
             # Add 3d.js into Javascript source header
-            self.add_JSsource("http://code.highcharts.com/highcharts-3d.js")
+            self.add_JSsource("http://code.highcharts.com/6/highcharts-3d.js")
 
 
     def set_dict_options(self, options):
