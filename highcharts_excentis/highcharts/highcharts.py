@@ -1,30 +1,42 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
+
 from future.standard_library import install_aliases
+
 install_aliases()
+import datetime
+import html
+import json
+import re
+import urllib.error
+import urllib.parse
+import urllib.request
+import uuid
+
+import diskcache as dc
+from jinja2 import Environment, PackageLoader
 from past.builtins import basestring
 
-from jinja2 import Environment, PackageLoader
-
-import json, uuid
-import re
-import datetime
-import urllib.request, urllib.error, urllib.parse
-import html
-from .options import BaseOptions, ChartOptions, ColorAxisOptions, \
-    ColorsOptions, CreditsOptions, DrilldownOptions, ExportingOptions, \
-    GlobalOptions, LabelsOptions, LangOptions, \
-    LegendOptions, LoadingOptions, NavigationOptions, PaneOptions, \
-    PlotOptions, SeriesData, SubtitleOptions, TitleOptions, \
-    TooltipOptions, xAxisOptions, yAxisOptions, zAxisOptions, MultiAxis
-
+from .common import (ArrayObject, ColorObject, CommonObject, CSSObject,
+                     Formatter, JSfunction, Levels, RawJavaScriptText,
+                     SVGObject)
 from .highchart_types import Series, SeriesOptions
-from .common import Levels, Formatter, CSSObject, SVGObject, JSfunction, RawJavaScriptText, \
-    CommonObject, ArrayObject, ColorObject
+from .options import (BaseOptions, ChartOptions, ColorAxisOptions,
+                      ColorsOptions, CreditsOptions, DrilldownOptions,
+                      ExportingOptions, GlobalOptions, LabelsOptions,
+                      LangOptions, LegendOptions, LoadingOptions, MultiAxis,
+                      NavigationOptions, PaneOptions, PlotOptions, SeriesData,
+                      SubtitleOptions, TitleOptions, TooltipOptions,
+                      xAxisOptions, yAxisOptions, zAxisOptions)
 
 CONTENT_FILENAME = "content.html"
 PAGE_FILENAME = "page.html"
+
+# 50MB limit, to ensure LRU evection
+_CACHE = dc.Cache('./highcharts_cache', size_limit=50 * 1024**2)
+
+_CACHE.cull()  # Clean up expired entries
 
 pl = PackageLoader('highcharts_excentis.highcharts', 'templates')
 jinja2_env = Environment(lstrip_blocks=True, trim_blocks=True, loader=pl)
@@ -347,15 +359,36 @@ class Highchart(object):
             opener = urllib.request.build_opener()
             opener.addheaders = [('User-Agent', 'Mozilla/5.0')]
 
+
+            def _get_or_download(url: str,
+                                 ttl=60 * 60 * 24 * 7):  # Default: 7 days
+                """Perform caching for Highcarts JS libraries to avoid HTTP rate limit."""
+                if url in _CACHE:
+                    print(f"Highcharts: Cache hit, pulling cached URL {url} ")
+                    return _CACHE[url]
+                else:
+                    try:
+                        # your actual HTTP request
+                        print(f"Highcharts: Downloading and caching url {url}")
+                        content = opener.open(url).read().decode(
+                            'utf-8').replace('\n', '')
+                        _CACHE.set(url, content, expire=ttl)  # 1 week TTL
+                        return content
+                    except urllib.error.HTTPError as e:
+                        print(
+                            f"Highcharts: HTTP Error {e.code} for URL: {url}")
+                    except urllib.error.URLError as e:
+                        print(
+                            f"Highcharts: URL Error: {e.reason} for URL: {url}"
+                        )
+
             self.header_css = [
-                '<style>' +
-                opener.open(source).read().decode('utf-8').replace('\n', '') +
-                '</style>' for source in self.CSSsource
+                '<style>' + _get_or_download(source) + '</style>'
+                for source in self.CSSsource
             ]
 
             self.header_js = [
-                '<script type="text/javascript">' +
-                opener.open(source).read().decode('utf-8').replace('\n', '') +
+                '<script type="text/javascript">' + _get_or_download(source) +
                 '</script>' for source in self.JSsource
             ]
             
