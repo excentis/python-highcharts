@@ -602,7 +602,7 @@ chart.save_file()
 Added persistent, on-disk caching for Highcharts JavaScript library downloads to avoid repeated network requests and prevent hitting Highcharts rate limits.
 
 **Key Changes:**
-- Introduced [`diskcache`](https://pypi.org/project/diskcache/) to store downloaded JS files in `./highcharts_cache` (50 MB limit).
+- Introduced [`diskcache`](https://pypi.org/project/diskcache/) to store downloaded JS files in `./.cache/highcharts-excentis` (50 MB limit).
 - Default **time-to-live (TTL)** for cached files: **7 days**.
 - Requests now go through a `get_or_download(url)` helper:
   - **Cache hit** → return stored content.
@@ -611,10 +611,10 @@ Added persistent, on-disk caching for Highcharts JavaScript library downloads to
 
 **What Users Should Know:**
 - First run may download required files; subsequent runs reuse local cache.
-- Cache directory path (`./highcharts_cache`) works with project’s CI/CD and artifact/cache strategy.
+- Cache directory path (`./.cache/highcharts-excentis`) works with project’s CI/CD and artifact/cache strategy.
   this directory is automatically generated in your working directory
 - Prevents repeated HTTP calls between test runs and across pipelines when artifacts/cache are reused.
-- Cache can be cleared manually by deleting `./highcharts_cache`.
+- Cache can be cleared manually by deleting `./.cache/highcharts-excentis`.
 
 ## Todo:
 

@@ -34,7 +34,7 @@ CONTENT_FILENAME = "content.html"
 PAGE_FILENAME = "page.html"
 
 # 50MB limit, to ensure LRU evection
-_CACHE = dc.Cache('./highcharts_cache', size_limit=50 * 1024**2)
+_CACHE = dc.Cache('./.cache/highcharts-excentis', size_limit=50 * 1024**2)
 
 _CACHE.cull()  # Clean up expired entries
 
