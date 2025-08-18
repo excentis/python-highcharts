@@ -599,7 +599,7 @@ chart.save_file()
 ## 📦 HTTP Request Caching
 
 **Summary:**  
-Added persistent, on-disk caching for Highcharts JavaScript library downloads to avoid repeated network requests and prevent hitting Highcharts rate limits.
+Added persistent, on-disk caching for Highcharts JavaScript library downloads to avoid repeated network requests and prevent hitting Highcharts CDN rate limits.
 
 **Key Changes:**
 - Introduced [`diskcache`](https://pypi.org/project/diskcache/) to store downloaded JS files in `./.cache/highcharts-excentis` (50 MB limit).
