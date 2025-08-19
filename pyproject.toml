@@ -18,7 +18,8 @@ maintainers = [
 requires-python = ">=3.4"
 dependencies = [
     'future',
-    'Jinja2', # for templates
+    'diskcache', # to avoid http rate limit
+    'Jinja2' # for templates
 ]
 keywords = [
     'python',
