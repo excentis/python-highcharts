@@ -193,6 +193,19 @@ chart.add_data_set(data, 'spline', 'Temperature', marker={'enabled': False})
 chart.save_file()
 
 ```
+## Hosting your local CDN
+
+To avoid requesting Highcharts CDN every time you want to generate a graph,
+and eventually getting blocked by a rate limit, you can choose or
+download the Highcharts resources and static files and host them.
+
+```python
+from highcharts_excentis import Highchart
+
+# Define the CDN's url
+chart = Highchart(offline=True, cdn_url="example.com/highcharts")
+```
+
 
 ## Jupyter/IPython notebook
 
