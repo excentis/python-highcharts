@@ -75,21 +75,23 @@ class Highchart(object):
         self.template_page_highcharts = template_page
         self.template_content_highcharts = template_content
 
-        
+        # This parameter was introduced to allow users to host their own CDN
+        # because of Highcharts limiting requests
+        self.cdn_url = kwargs.get("cdn_url", "https://code.highcharts.com/6")
+
         # set Javascript src, Highcharts lib needs to make sure it's up to date
         self.JSsource = [
-                'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-                'https://code.highcharts.com/6/highcharts.js',
-                'https://code.highcharts.com/6/highcharts-more.js',
-                'https://code.highcharts.com/6/modules/heatmap.js',
-                'https://code.highcharts.com/6/modules/exporting.js'
-            ]
+            'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            f'{self.cdn_url}/highcharts.js',
+            f'{self.cdn_url}/highcharts-more.js',
+            f'{self.cdn_url}/modules/heatmap.js',
+            f'{self.cdn_url}/modules/exporting.js'
+        ]
 
         # set CSS src
         self.CSSsource = [
-                'https://code.highcharts.com/6/css/highcharts.css',
-
-            ]
+            f'{self.cdn_url}/css/highcharts.css',
+        ]
 
         self.offline = kwargs.get("offline", False)
 
@@ -218,7 +220,7 @@ class Highchart(object):
         kwargs.update({'name':name})
 
         if series_type == 'treemap':
-            self.add_JSsource('http://code.highcharts.com/6/modules/treemap.js')
+            self.add_JSsource(f'{self.cdn_url}/modules/treemap.js')
 
         series_data = Series(data, series_type=series_type, **kwargs)
        
@@ -303,8 +305,7 @@ class Highchart(object):
 
         if option_type == 'chart' and 'options3d' in option_dict:
             # Add 3d.js into Javascript source header
-            self.add_JSsource("http://code.highcharts.com/6/highcharts-3d.js")
-
+            self.add_JSsource(f"{self.cdn_url}/highcharts-3d.js")
 
     def set_dict_options(self, options):
         """for dictionary-like inputs (as object in Javascript)
@@ -349,11 +350,9 @@ class Highchart(object):
 
     def buildhtmlheader(self):
         """generate HTML header content"""
-        
+
         if self.drilldown_flag:
-            self.add_JSsource('http://code.highcharts.com/6/modules/drilldown.js')
-
-
+            self.add_JSsource(f'{self.cdn_url}/modules/drilldown.js')
 
         if self.offline:
             opener = urllib.request.build_opener()
